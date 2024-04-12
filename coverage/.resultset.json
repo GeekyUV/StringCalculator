@@ -1,0 +1,109 @@
+{
+  "RSpec": {
+    "coverage": {
+      "/Users/yuvraj/Desktop/StringCalculator/lib/string_calculator.rb": {
+        "lines": [
+          1,
+          1,
+          12,
+          8,
+          null,
+          null,
+          1,
+          12,
+          null,
+          null,
+          1,
+          142,
+          null,
+          null,
+          1,
+          20,
+          null,
+          null,
+          1,
+          24,
+          null,
+          null,
+          1,
+          12,
+          null,
+          null,
+          1,
+          2,
+          null,
+          null
+        ]
+      },
+      "/Users/yuvraj/Desktop/StringCalculator/app/channels/application_cable/channel.rb": {
+        "lines": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "branches": {
+        }
+      },
+      "/Users/yuvraj/Desktop/StringCalculator/app/channels/application_cable/connection.rb": {
+        "lines": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "branches": {
+        }
+      },
+      "/Users/yuvraj/Desktop/StringCalculator/app/controllers/application_controller.rb": {
+        "lines": [
+          0,
+          0
+        ],
+        "branches": {
+        }
+      },
+      "/Users/yuvraj/Desktop/StringCalculator/app/helpers/application_helper.rb": {
+        "lines": [
+          0,
+          0
+        ],
+        "branches": {
+        }
+      },
+      "/Users/yuvraj/Desktop/StringCalculator/app/jobs/application_job.rb": {
+        "lines": [
+          0,
+          null,
+          null,
+          null,
+          null,
+          null,
+          0
+        ],
+        "branches": {
+        }
+      },
+      "/Users/yuvraj/Desktop/StringCalculator/app/mailers/application_mailer.rb": {
+        "lines": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "branches": {
+        }
+      },
+      "/Users/yuvraj/Desktop/StringCalculator/app/models/application_record.rb": {
+        "lines": [
+          0,
+          0,
+          0
+        ],
+        "branches": {
+        }
+      }
+    },
+    "timestamp": 1712920604
+  }
+}
