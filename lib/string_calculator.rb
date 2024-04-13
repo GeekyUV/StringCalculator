@@ -1,30 +1,24 @@
 module StringCalculator
-  def add
-    raise_if_negatives
-    digits.reduce(0, :+)
-  end
+  def self.add(input)
+    return 0 if input.empty?
 
-  def raise_if_negatives
-    raise "Negatives not allowed: #{negatives.join(', ')}" if negatives.any?
-  end
+    delimiters = [",", "\n"]
 
-  def negatives
-    @negatives ||= digits.select {|d| d < 0}
-  end
+    if input.start_with?("//")
+      custom_delimiter, input = input.split("\n", 2)
+      custom_delimiter.slice!("//")
+      delimiters = custom_delimiter.split("][").map { |d| d.tr("[]", "") }
+    end
 
-  def digits
-    @digits ||= gsub("\n", delimiter).split(delimiter).map(&:to_i)
-  end
+    numbers = input.split(Regexp.union(delimiters)).map(&:to_i)
 
-  def delimiter
-    @delimiter ||= has_custom_delimiter? ? custom_delimiter : ','
-  end
+    negatives = numbers.select { |num| num.negative? }
+    if negatives.any?
+      raise "Negatives not allowed: #{negatives.join(", ")}"
+    end
 
-  def has_custom_delimiter?
-    self[0,2] == '//'
-  end
+    numbers.reject! { |num| num > 1000 }
 
-  def custom_delimiter
-    self[2]
+    numbers.sum
   end
 end

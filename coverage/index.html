@@ -14,7 +14,7 @@
       <img src="./assets/0.12.3/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" class="hide">
-      <div class="timestamp">Generated <abbr class="timeago" title="2024-04-12T16:46:44+05:30">2024-04-12T16:46:44+05:30</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2024-04-13T16:55:05+05:30">2024-04-13T16:55:05+05:30</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
@@ -23,14 +23,14 @@
     <span class="group_name">All Files</span>
     (<span class="covered_percent">
       <span class="red">
-  43.24%
+  40.0%
 </span>
 
      </span>
      covered at
      <span class="covered_strength">
        <span class="green">
-         6.49
+         7.0
        </span>
     </span> hits/line
     )
@@ -43,11 +43,11 @@
   </div>
 
   <div class="t-line-summary">
-    <b>37</b> relevant lines,
-    <span class="green"><b>16</b> lines covered</span> and
+    <b>35</b> relevant lines,
+    <span class="green"><b>14</b> lines covered</span> and
     <span class="red"><b>21</b> lines missed. </span>
     (<span class="red">
-  43.24%
+  40.0%
 </span>
 )
   </div>
@@ -150,11 +150,11 @@
           <tr class="t-file">
             <td class="strong t-file__name"><a href="#b7c100c62c42a82975c96223519dc692f3572cbb" class="src_link" title="lib/string_calculator.rb">lib/string_calculator.rb</a></td>
             <td class="green strong cell--number t-file__coverage">100.00 %</td>
-            <td class="cell--number">30</td>
-            <td class="cell--number">16</td>
-            <td class="cell--number">16</td>
+            <td class="cell--number">24</td>
+            <td class="cell--number">14</td>
+            <td class="cell--number">14</td>
             <td class="cell--number">0</td>
-            <td class="cell--number">15.00</td>
+            <td class="cell--number">17.50</td>
             
           </tr>
         
@@ -602,7 +602,7 @@
      covered at
      <span class="covered_strength">
        <span class="green">
-         15.0
+         17.5
        </span>
     </span> hits/line
     )
@@ -615,8 +615,8 @@
   </div>
 
   <div class="t-line-summary">
-    <b>16</b> relevant lines,
-    <span class="green"><b>16</b> lines covered</span> and
+    <b>14</b> relevant lines,
+    <span class="green"><b>14</b> lines covered</span> and
     <span class="red"><b>0</b> lines missed. </span>
     (<span class="green">
   100.0%
@@ -645,11 +645,11 @@
           <tr class="t-file">
             <td class="strong t-file__name"><a href="#b7c100c62c42a82975c96223519dc692f3572cbb" class="src_link" title="lib/string_calculator.rb">lib/string_calculator.rb</a></td>
             <td class="green strong cell--number t-file__coverage">100.00 %</td>
-            <td class="cell--number">30</td>
-            <td class="cell--number">16</td>
-            <td class="cell--number">16</td>
+            <td class="cell--number">24</td>
+            <td class="cell--number">14</td>
+            <td class="cell--number">14</td>
             <td class="cell--number">0</td>
-            <td class="cell--number">15.00</td>
+            <td class="cell--number">17.50</td>
             
           </tr>
         
@@ -1186,8 +1186,8 @@
     
 
     <div class="t-line-summary">
-      <b>16</b> relevant lines.
-      <span class="green"><b>16</b> lines covered</span> and
+      <b>14</b> relevant lines.
+      <span class="green"><b>14</b> lines covered</span> and
       <span class="red"><b>0</b> lines missed.</span>
     </div>
 
@@ -1216,40 +1216,40 @@
 
             
 
-            <code class="ruby">  def add</code>
+            <code class="ruby">  def self.add(input)</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="12" data-linenumber="3">
-            <span class="hits">12</span>
+          <li class="covered" data-hits="16" data-linenumber="3">
+            <span class="hits">16</span>
             
 
             
 
-            <code class="ruby">    raise_if_negatives</code>
+            <code class="ruby">    return 0 if input.empty?</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="8" data-linenumber="4">
-            <span class="hits">8</span>
+          <li class="never" data-hits="" data-linenumber="4">
+            
             
 
             
 
-            <code class="ruby">    digits.reduce(0, :+)</code>
+            <code class="ruby"></code>
           </li>
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="5">
-            
-            
-
+          <li class="covered" data-hits="15" data-linenumber="5">
+            <span class="hits">15</span>
             
 
-            <code class="ruby">  end</code>
+            
+
+            <code class="ruby">    delimiters = [&quot;,&quot;, &quot;\n&quot;]</code>
           </li>
         </div>
       
@@ -1265,40 +1265,62 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="7">
-            <span class="hits">1</span>
+          <li class="covered" data-hits="15" data-linenumber="7">
+            <span class="hits">15</span>
             
 
             
 
-            <code class="ruby">  def raise_if_negatives</code>
+            <code class="ruby">    if input.start_with?(&quot;//&quot;)</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="12" data-linenumber="8">
-            <span class="hits">12</span>
+          <li class="covered" data-hits="8" data-linenumber="8">
+            <span class="hits">8</span>
             
 
             
 
-            <code class="ruby">    raise &quot;Negatives not allowed: #{negatives.join(&#39;, &#39;)}&quot; if negatives.any?</code>
+            <code class="ruby">      custom_delimiter, input = input.split(&quot;\n&quot;, 2)</code>
           </li>
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="9">
-            
-            
-
+          <li class="covered" data-hits="8" data-linenumber="9">
+            <span class="hits">8</span>
             
 
-            <code class="ruby">  end</code>
+            
+
+            <code class="ruby">      custom_delimiter.slice!(&quot;//&quot;)</code>
           </li>
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="10">
+          <li class="covered" data-hits="20" data-linenumber="10">
+            <span class="hits">20</span>
+            
+
+            
+
+            <code class="ruby">      delimiters = custom_delimiter.split(&quot;][&quot;).map { |d| d.tr(&quot;[]&quot;, &quot;&quot;) }</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="11">
+            
+            
+
+            
+
+            <code class="ruby">    end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="12">
             
             
 
@@ -1309,35 +1331,13 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="11">
-            <span class="hits">1</span>
+          <li class="covered" data-hits="15" data-linenumber="13">
+            <span class="hits">15</span>
             
 
             
 
-            <code class="ruby">  def negatives</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="142" data-linenumber="12">
-            <span class="hits">142</span>
-            
-
-            
-
-            <code class="ruby">    @negatives ||= digits.select {|d| d &lt; 0}</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="13">
-            
-            
-
-            
-
-            <code class="ruby">  end</code>
+            <code class="ruby">    numbers = input.split(Regexp.union(delimiters)).map(&amp;:to_i)</code>
           </li>
         </div>
       
@@ -1353,35 +1353,35 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="15">
-            <span class="hits">1</span>
+          <li class="covered" data-hits="62" data-linenumber="15">
+            <span class="hits">62</span>
             
 
             
 
-            <code class="ruby">  def digits</code>
+            <code class="ruby">    negatives = numbers.select { |num| num.negative? }</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="20" data-linenumber="16">
-            <span class="hits">20</span>
+          <li class="covered" data-hits="15" data-linenumber="16">
+            <span class="hits">15</span>
             
 
             
 
-            <code class="ruby">    @digits ||= gsub(&quot;\n&quot;, delimiter).split(delimiter).map(&amp;:to_i)</code>
+            <code class="ruby">    if negatives.any?</code>
           </li>
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="17">
-            
-            
-
+          <li class="covered" data-hits="2" data-linenumber="17">
+            <span class="hits">2</span>
             
 
-            <code class="ruby">  end</code>
+            
+
+            <code class="ruby">      raise &quot;Negatives not allowed: #{negatives.join(&quot;, &quot;)}&quot;</code>
           </li>
         </div>
       
@@ -1392,29 +1392,29 @@
 
             
 
+            <code class="ruby">    end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="19">
+            
+            
+
+            
+
             <code class="ruby"></code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="19">
-            <span class="hits">1</span>
+          <li class="covered" data-hits="54" data-linenumber="20">
+            <span class="hits">54</span>
             
 
             
 
-            <code class="ruby">  def delimiter</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="24" data-linenumber="20">
-            <span class="hits">24</span>
-            
-
-            
-
-            <code class="ruby">    @delimiter ||= has_custom_delimiter? ? custom_delimiter : &#39;,&#39;</code>
+            <code class="ruby">    numbers.reject! { |num| num &gt; 1000 }</code>
           </li>
         </div>
       
@@ -1425,45 +1425,23 @@
 
             
 
-            <code class="ruby">  end</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="22">
-            
-            
-
-            
-
             <code class="ruby"></code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="23">
-            <span class="hits">1</span>
+          <li class="covered" data-hits="13" data-linenumber="22">
+            <span class="hits">13</span>
             
 
             
 
-            <code class="ruby">  def has_custom_delimiter?</code>
+            <code class="ruby">    numbers.sum</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="12" data-linenumber="24">
-            <span class="hits">12</span>
-            
-
-            
-
-            <code class="ruby">    self[0,2] == &#39;//&#39;</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="25">
+          <li class="never" data-hits="" data-linenumber="23">
             
             
 
@@ -1474,51 +1452,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="26">
-            
-            
-
-            
-
-            <code class="ruby"></code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="1" data-linenumber="27">
-            <span class="hits">1</span>
-            
-
-            
-
-            <code class="ruby">  def custom_delimiter</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="2" data-linenumber="28">
-            <span class="hits">2</span>
-            
-
-            
-
-            <code class="ruby">    self[2]</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="29">
-            
-            
-
-            
-
-            <code class="ruby">  end</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="30">
+          <li class="never" data-hits="" data-linenumber="24">
             
             
 

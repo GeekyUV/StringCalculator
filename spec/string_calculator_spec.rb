@@ -1,99 +1,118 @@
 require 'string_calculator'
 
 RSpec.describe StringCalculator do
-  subject(:calculator) { input.extend(StringCalculator) }
+  describe ".add" do
+    let(:empty_string) { "" }
+    let(:single_number) { "5" }
+    let(:two_numbers) { "2,3" }
+    let(:comma_separated_numbers) { "1,2,3,4,5" }
+    let(:newlines_and_commas) { "1\n2,3" }
+    let(:custom_delimiter) { "//;\n1;2" }
+    let(:negative_number) { "-5" }
+    let(:negative_numbers) { "1,2,-3,-4,-5" }
+    let(:ignore_numbers_larger_than_1000) { "2,1002" }
+    let(:custom_delimiter_any_length) { "//[***]\n1***2***3" }
+    let(:multiple_custom_delimiters) { "//[*][%]\n1*2%3" }
+    let(:multiple_custom_delimiters_longer_than_one_char) { "//[**][%%]\n1**2%%3" }
+    let(:many_numbers_custom_delimiter) { "//;\n1;2;3;4;5" }
+    let(:custom_delimiter_special_characters) { "//[!@#]\n1!@#2!@#3" }
+    let(:multiple_custom_delimiters_any_length) { "//[**][%%][$$$]\n1**2%%3$$$4" }
+    let(:custom_delimiter_spaces) { "//[ ]\n1 2 3 4 5" }
 
-  describe "#add" do
-    let(:input) { "" }
-
-    it "returns 0 for the empty string" do
-      expect(calculator.add).to eq(0)
+    context "with empty string" do
+      it "returns 0" do
+        expect(StringCalculator.add(empty_string)).to eq(0)
+      end
     end
 
     context "with single number" do
-      let(:input) { "5" }
-
-      it "returns the number" do
-        expect(calculator.add).to eq(5)
+      it "returns the number itself" do
+        expect(StringCalculator.add(single_number)).to eq(5)
       end
     end
 
-    context "with two numbers" do
-      let(:input) { "2,3" }
-
-      it "returns the sum" do
-        expect(calculator.add).to eq(5)
+    context "with two numbers separated by comma" do
+      it "returns the sum of two numbers" do
+        expect(StringCalculator.add(two_numbers)).to eq(5)
       end
     end
 
-    context "with three numbers" do
-      let(:input) { "1,2,3" }
-
-      it "returns the sum" do
-        expect(calculator.add).to eq(6)
+    context "with numbers separated by commas" do
+      it "returns the sum of numbers" do
+        expect(StringCalculator.add(comma_separated_numbers)).to eq(15)
       end
     end
 
-    context "with many numbers" do
-      let(:input) { (["20"] * 100).join(',') }
-
-      it "returns the sum" do
-        expect(calculator.add).to eq(2000)
+    context "with numbers separated by newlines and commas" do
+      it "returns the sum of numbers" do
+        expect(StringCalculator.add(newlines_and_commas)).to eq(6)
       end
     end
 
-    context "with newlines as delimiters" do
-      let(:input) { "1\n2" }
-
-      it "supports newlines" do
-        expect(calculator.add).to eq(3)
+    context "with custom delimiter" do
+      it "returns the sum of numbers" do
+        expect(StringCalculator.add(custom_delimiter)).to eq(3)
       end
     end
 
-    context "with custom delimiters" do
-      context "with semicolon as delimiter" do
-        let(:input) { "//;\n1;2;3" }
-
-        it "allows the semicolon" do
-          expect(calculator.add).to eq(6)
-        end
-      end
-
-      context "with letter 'x' as delimiter" do
-        let(:input) { "//x\n45x55x65" }
-
-        it "allows a letter as a delimiter" do
-          expect(calculator.add).to eq(165)
-        end
+    context "with a single negative number" do
+      it "raises an exception with the negative number mentioned in the error message" do
+        expect { StringCalculator.add(negative_number) }.to raise_error("Negatives not allowed: -5")
       end
     end
-
 
     context "with negative numbers" do
-      context "with a single negative number" do
-        let(:input) { "-1" }
-
-        it "raises an exception if it finds one" do
-          expect { calculator.add }.to raise_error
-        end
-
-        it "includes the negative number in the error message" do
-          expect { calculator.add }.to raise_error("Negatives not allowed: -1")
-        end
-      end
-
-      context "with multiple negative numbers" do
-        let(:input) { "-1,2,-25" }
-
-        it "raises an exception if it finds one" do
-          expect { calculator.add }.to raise_error
-        end
-
-        it "includes the negatives in the error message" do
-          expect { calculator.add }.to raise_error("Negatives not allowed: -1, -25")
-        end
+      it "raises an exception with negative numbers mentioned in the error message" do
+        expect { StringCalculator.add(negative_numbers) }.to raise_error("Negatives not allowed: -3, -4, -5")
       end
     end
 
+    context "ignoring numbers larger than 1000" do
+      it "returns the sum of numbers" do
+        expect(StringCalculator.add(ignore_numbers_larger_than_1000)).to eq(2)
+      end
+    end
+
+    context "with custom delimiter of any length" do
+      it "returns the sum of numbers" do
+        expect(StringCalculator.add(custom_delimiter_any_length)).to eq(6)
+      end
+    end
+
+    context "with multiple custom delimiters" do
+      it "returns the sum of numbers" do
+        expect(StringCalculator.add(multiple_custom_delimiters)).to eq(6)
+      end
+    end
+
+    context "with multiple custom delimiters with length longer than one char" do
+      it "returns the sum of numbers" do
+        expect(StringCalculator.add(multiple_custom_delimiters_longer_than_one_char)).to eq(6)
+      end
+    end
+
+    context "with many numbers separated by custom delimiter" do
+      it "returns the sum of numbers" do
+        expect(StringCalculator.add(many_numbers_custom_delimiter)).to eq(15)
+      end
+    end
+
+    context "with custom delimiter containing special characters" do
+      it "returns the sum of numbers" do
+        expect(StringCalculator.add(custom_delimiter_special_characters)).to eq(6)
+      end
+    end
+
+    context "with multiple custom delimiters of any length" do
+      it "returns the sum of numbers" do
+        expect(StringCalculator.add(multiple_custom_delimiters_any_length)).to eq(10)
+      end
+    end
+
+    context "with custom delimiter containing spaces" do
+      it "returns the sum of numbers" do
+        expect(StringCalculator.add(custom_delimiter_spaces)).to eq(15)
+      end
+    end
   end
 end
